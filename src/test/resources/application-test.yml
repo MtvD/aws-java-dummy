@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+aws:
+  s3:
+    bucket-name: test-bucket
+    region: us-east-1
+    endpoint: http://localhost:4566
+
+jwt:
+  secret: test-secret-key-for-testing-purposes-only-must-be-at-least-256-bits-long
+  expiration-hours: 24
+
+network:
+  internal-ip-ranges:
+    - "10.0.0.0/8"
+    - "172.16.0.0/12"
+    - "192.168.0.0/16"
+    - "127.0.0.0/8"
+
+file:
+  max-size-mb: 100
+
+search:
+  default-page-size: 20
